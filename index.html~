@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>extra special bitter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="images/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="HEADER">
+	<h1>extra special bitter</h1>
+	<ul>
+		<li><a href="http://extraspecialbitter.blogspot.com/">blog</a></li>
+<!--		<li><a href="http://www207.pair.com/mena/contact_form.html">contact</a></li> -->
+		<li><a href="http://www207.pair.com/mena/resources.html">resources</a></li>
+		<li><a href="http://www.haikupoet.com/">haikupoet.com</a></li>
+		<li><a href="http://www207.pair.com/mena/interests.html">interests</a></li>
+		<li><a href="http://www207.pair.com/mena/paul_poems.shtml">poetry</a></li>
+		<li><a href="http://www207.pair.com/mena/bio.html">bio</a></li>
+	</ul>
+	<div class="Visual"> </div>
+</div>
+
+<div id="FOOTER">
+<p>Extra Special Bitter &copy; 2007 </p>
+<p>photo by <a href="http://mmmnegativespace.blogspot.com/">MMM</a></p>
+<p><a href="http://www.gettemplate.com">Designed by GetTemplate.com</a></p>
+</div>
+
+</body>
+</html>

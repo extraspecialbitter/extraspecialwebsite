@@ -1,0 +1,275 @@
+root@setenta=> cat /etc/blag-release 
+BLAG release 70000 (sugarwater)
+root@setenta=> uname -r
+2.6.22.9-91.fc7
+root@setenta=> cd /etc/apt
+root@setenta=> cat apt.conf
+// User customizable configuration
+
+RPM
+{
+  // Uncomment to disable GPG-signature checking for packages
+GPG-Check "false";
+  // Uncomment to prevent kernel being handled along with (dist-)upgrade
+  // Upgrade-Virtual "false";
+  // Uncomment to hold packages with modified config files in (dist-)upgrade
+  // Preserve-Config "true";
+};
+
+// Options for the downloading routines
+Acquire
+{
+  // Retries "1";
+  // http::Proxy "http://user:password@proxy-server.domain.tld:port/";
+  // http::Proxy "http://proxy-server.domain.tld:port/";
+};
+
+root@setenta=> cd sources.list.d/
+root@setenta=> cat blag.list
+### blag Apt Repository
+### """"""""""""""""""
+### More information about this repository:
+###	http://www.blagblagblag.org
+
+### BLAG Apt Repository for BLAG70000
+# rpm http://www.blagblagblag.org/ 70000/i386 os updates errata
+# rpm http://www.blagblagblag.org/ 70000/i386 extras
+
+### BLAG Apt Repository for 90k
+rpm http://www.blagblagblag.org/ 90000/$(ARCH) atrpms blag dribble fedora livna lxoliva
+
+root@setenta=> apt-get update
+Get:1 http://www.blagblagblag.org 90000/i386 release [1318B]
+Get:1 http://www.blagblagblag.org 90000/i386/atrpms pkglist [213kB]
+Get:2 http://www.blagblagblag.org 90000/i386/atrpms release [143B]
+Get:3 http://www.blagblagblag.org 90000/i386/blag pkglist [21.9kB]
+Get:4 http://www.blagblagblag.org 90000/i386/blag release [140B]
+Get:5 http://www.blagblagblag.org 90000/i386/dribble pkglist [45.8kB]
+Get:6 http://www.blagblagblag.org 90000/i386/dribble release [143B]
+Get:7 http://www.blagblagblag.org 90000/i386/fedora pkglist [7840kB]
+Get:8 http://www.blagblagblag.org 90000/i386/fedora release [144B]
+Get:9 http://www.blagblagblag.org 90000/i386/livna pkglist [125kB]
+Get:10 http://www.blagblagblag.org 90000/i386/livna release [142B]
+Get:11 http://www.blagblagblag.org 90000/i386/lxoliva pkglist [149kB]
+Get:12 http://www.blagblagblag.org 90000/i386/lxoliva release [143B]
+Reading Package Lists... Done
+Building Dependency Tree... Done
+Del python-gpod 0.6.0-3.fc7 [233kB]
+Del youtube-dl 2008.01.24-1.fc7 [11.0kB]
+Del totem-plparser 2.18.3-1.fc7 [37.3kB]
+Del sinjdoc 0.5-4.fc7 [842kB]
+Del samba-common 3.0.28-0.fc7 [7555kB]
+Del libgpod 0.6.0-3.fc7 [241kB]
+Del libtool-ltdl 1.5.22-11.fc7 [38.4kB]
+Del gnash 0.8.2-3.fc7 [2196kB]
+Del gnomad2 2.9.0-2.fc7 [191kB]
+Del bluefish 1.0.7-1.fc7 [1648kB]
+Del jpackage-utils 1.7.3-1jpp.3.fc7 [62.6kB]
+Del libnjb 2.2.6-1.fc7 [73.8kB]
+Del libgcj 4.1.2-27.fc7 [19.6MB]
+Del agg 2.5-1 [151kB]
+Del libmtp 0.2.4-1.fc7 [86.0kB]
+Del easytag 2.1-1.fc7 [812kB]
+Del pilot-link 2:0.12.2-6.fc7 [706kB]
+Del gnash-plugin 0.8.2-3.fc7 [23.5kB]
+Del sg3_utils-libs 1.23-1.fc7 [42.3kB]
+Del system-config-samba 1.2.52-1.fc7 [294kB]
+Del samba 3.0.28-0.fc7 [2947kB]
+Del java-1.5.0-gcj 1.5.0.0-14.fc7 [107kB]
+Del jpilot 0.99.9-3.fc7 [998kB]
+Del java_cup 1:0.10-0.k.6jpp.1 [185kB]
+Del samba-client 3.0.28-0.fc7 [4705kB]
+Del rhythmbox 0.10.1-7.fc7 [4287kB]
+root@setenta=> apt-get dist=[K-upgrade
+Reading Package Lists... Done
+Building Dependency Tree... Done
+Calculating Upgrade... Done
+The following packages will be upgraded
+  ConsoleKit ConsoleKit-libs ConsoleKit-x11 GConf2 GConf2-gtk ImageMagick
+  ImageMagick-c++ ImageMagick-perl MAKEDEV NetworkManager NetworkManager-glib
+  NetworkManager-gnome ORBit2 PyXML SDL abiword acl acpid agg alsa-lib
+  alsa-utils anacron apmd apr apr-util apt arts artwiz-aleczapka-fonts aspell
+  aspell-en at at-spi atk attr audacious audacious-libs audacious-plugins
+  audacious-plugins-jack audacity audiofile audit-libs audit-libs-python
+  authconfig authconfig-gtk autofs autotrace avahi avahi-glib bash bc
+  bcm43xx-fwcutter bind-libs bind-utils binutils blag-logos blag-release
+  blagCanyon bluefish bzip2 bzip2-libs cairo cairomm cdparanoia
+  cdparanoia-libs cdrdao checkpolicy chkconfig chkfontpath compat-wxGTK26
+  compiz comps-extras control-center coreutils cpio cpp cpuspeed cracklib
+  cracklib-dicts cracklib-python crontabs crypto-utils cryptsetup-luks cups
+  cups-libs cups-pdf curl cyrus-sasl-lib cyrus-sasl-md5 cyrus-sasl-plain db4
+  dbus dbus-glib dbus-python dbus-x11 dcraw dejavu-fonts
+  desktop-backgrounds-basic desktop-file-utils device-mapper
+  device-mapper-libs dhclient dhcp diffutils directfb dmidecode dmraid
+  docbook-dtds dvd+rw-tools dvdauthor dvgrab e2fsprogs e2fsprogs-libs easytag
+  ed eel2 eject elfutils elfutils-libelf elfutils-libs enchant enscript
+  esound-libs ethtool evince evolution-data-server expat faac faad2 fbset
+  ffmpeg fftw file file-libs file-roller filesystem findutils finger firstboot
+  flac fontconfig foomatic freeglut freetype fribidi ftp fuse-libs gail
+  galculator gamin gawk gc gcc gd gdbm gdm gedit genisoimage gettext gftp
+  ghostscript ghostscript-fonts giflib gimp gimp-libs glabels glib2 glibc
+  glibc-common glibc-devel glibc-headers glibmm24 glx-utils gmp gnomad2
+  gnome-applets gnome-audio gnome-desktop gnome-icon-theme gnome-keyring
+  gnome-keyring-manager gnome-media gnome-menus gnome-mount gnome-netstatus
+  gnome-nettool gnome-panel gnome-power-manager gnome-ppp gnome-python2
+  gnome-python2-applet gnome-python2-bonobo gnome-python2-canvas
+  gnome-python2-desktop gnome-python2-extras gnome-python2-gconf
+  gnome-python2-gnomeprint gnome-python2-gnomevfs gnome-python2-gtkhtml2
+  gnome-python2-gtkmozembed gnome-python2-gtksourceview gnome-python2-gtkspell
+  gnome-python2-libegg gnome-screensaver gnome-session gnome-system-monitor
+  gnome-terminal gnome-themes gnome-user-share gnome-utils gnome-vfs2
+  gnome-vfs2-smb gnome-volume-manager gnomebaker gnumeric gnupg gnutls goffice
+  gonvert gphoto2 gpm gpodder grep grip groff grub gsm gstreamer
+  gstreamer-ffmpeg gstreamer-plugins-bad gstreamer-plugins-base
+  gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-python
+  gstreamer-tools gthumb gtk-gnutella gtk2 gtk2-engines gtkhtml2 gtkmathview
+  gtkmm24 gtksourceview gtkspell gucharmap gutenprint gutenprint-plugin gzip
+  hal hal-cups-utils hal-info hal-libs hardlink hdparm hesiod
+  hicolor-icon-theme httpd hwbrowser hwdata icecast icedax id3lib imlib2
+  indent info initscripts inkscape iproute iptables iptables-ipv6 iptstate
+  iputils irda-utils istanbul jack-audio-connection-kit java-1.5.0-gcj
+  java_cup jfsutils joystick jpackage-utils jpilot jwhois kbd kernel
+  keyutils-libs kino krb5-libs kudzu ladspa lame lcms less lftp libEMF libFS
+  libICE libIDL libSM libX11 libXScrnSaver libXTrap libXau libXaw
+  libXcomposite libXcursor libXdamage libXdmcp libXevie libXext libXfixes
+  libXfont libXfontcache libXft libXi libXinerama libXmu libXpm libXrandr
+  libXrender libXres libXt libXtst libXv libXvMC libXxf86misc libXxf86vm
+  libacl libao libart_lgpl libattr libavc1394 libbinio libbonobo libbonoboui
+  libcaca libcap libcdaudio libcdio libcroco libdaemon libdhcp libdhcp4client
+  libdhcp6client libdmx libdrm libdv libdvdcss libdvdread libevent libexif
+  libfontenc libfreebob libgail-gnome libgcc libgcj libgcrypt libgda libglade2
+  libgnome libgnomecanvas libgnomecups libgnomedb libgnomekbd libgnomeprint22
+  libgnomeprintui22 libgnomeui libgomp libgpg-error libgpod libgsf
+  libgsf-gnome libgtop2 libid3tag libidn libiec61883 libiptcdata libjpeg
+  libmad libmms libmng libmodplug libmp4v2 libmpcdec libmtp libmusicbrainz
+  libnetfilter_conntrack libnfnetlink libnjb libnl libnotify libofa libogg
+  liboil libopenraw libopenraw-gnome libotr libpcap libpng libpurple
+  libquicktime libraw1394 librsvg2 libsamplerate libselinux libselinux-python
+  libsemanage libsepol libsexy libshout libsidplay libsigc++20 libsilc
+  libsmbclient libsndfile libsoup libstdc++ libsysfs libthai libtheora libtiff
+  libtirpc libtool-ltdl libtranslate libtunepimp libusb libuser libutempter
+  libvolume_id libvorbis libwmf libwnck libwpd libwvstreams libxkbfile
+  libxklavier libxml2 libxslt liferea link-grammar linuxwacom lirc listen
+  lockdev logrotate lrzsz lvm2 mailcap make man man-pages mcs-libs mcstrans
+  meanwhile mesa-libGL mesa-libGLU metacity mingetty mjpegtools mkinitrd
+  mlocate module-init-tools mozplugger mpeg2dec mplayer mplayer-fonts mtools
+  nano nas nash nautilus nautilus-cd-burner nautilus-extensions
+  nautilus-sendto nc neon net-tools netpbm netpbm-progs newt nfs-utils
+  nfs-utils-lib nmap nmap-frontend notification-daemon notify-python nscd nspr
+  nss nss_ldap ntfs-3g ntp ntsysv openjade openldap opensp openssh
+  openssh-askpass openssh-clients openssh-server openssl ots-libs pam pango
+  paps parted passwd patch pax pciutils pcmciautils pcre perl
+  perl-Compress-Zlib perl-HTML-Parser perl-HTML-Tagset perl-Parse-Yapp
+  perl-String-CRC32 perl-URI perl-XML-DOM perl-XML-Parser perl-XML-RegExp
+  perl-XML-XQL perl-libs perl-libwww-perl pidgin pidgin-otr pilot-link pinfo
+  pkgconfig plotutils pm-utils policycoreutils poppler popt ppp prelink procps
+  psacct psmisc pstoedit pycairo pygobject2 pygtk2 pygtk2-libglade pyorbit
+  pyparted python python-crypto python-eyed3 python-feedparser python-gpod
+  python-imaging python-libs python-musicbrainz2 python-mutagen python-numeric
+  python-sexy python-sqlite2 python-urlgrabber pyxf86config qt qtparted quota
+  radeontool rdate readahead readline redhat-menus rhpl rhpxl rhythmbox
+  rng-utils rp-pppoe rpcbind rpm rpm-libs rpm-python rsh rsync samba
+  samba-client samba-common scribus sed setserial setup setuptool
+  sg3_utils-libs sgml-common shadow-utils shared-mime-info sinjdoc slang
+  soundconverter soundtouch sox speex sqlite startup-notification streamripper
+  streamtuner sudo synaptic synaptics system-config-boot system-config-date
+  system-config-display system-config-keyboard system-config-language
+  system-config-lvm system-config-network system-config-network-tui
+  system-config-printer system-config-printer-libs system-config-rootpassword
+  system-config-samba system-config-services system-config-users taglib talk
+  tar tcl tcp_wrappers tcp_wrappers-libs tcsh telnet theora-tools thunderbird
+  time tix tk tkinter tmpwatch traceroute tre ttmkfdir tzdata udev unzip
+  urw-fonts usbutils usermode usermode-gtk vbetool vim-minimal vino vnc
+  vnc-libs vorbis-tools vsftpd vte wavpack wget which wireless-tools wodim
+  wpa_supplicant wvdial x264 xchat xfsprogs xine xine-lib xinetd
+  xkeyboard-config xml-common xorg-x11-apps xorg-x11-drivers
+  xorg-x11-drv-acecad xorg-x11-drv-aiptek xorg-x11-drv-apm xorg-x11-drv-ark
+  xorg-x11-drv-ast xorg-x11-drv-ati xorg-x11-drv-calcomp xorg-x11-drv-chips
+  xorg-x11-drv-cirrus xorg-x11-drv-citron xorg-x11-drv-digitaledge
+  xorg-x11-drv-dmc xorg-x11-drv-dummy xorg-x11-drv-dynapro
+  xorg-x11-drv-elographics xorg-x11-drv-evdev xorg-x11-drv-fbdev
+  xorg-x11-drv-fpit xorg-x11-drv-glint xorg-x11-drv-hyperpen xorg-x11-drv-i128
+  xorg-x11-drv-i740 xorg-x11-drv-i810 xorg-x11-drv-jamstudio
+  xorg-x11-drv-keyboard xorg-x11-drv-magellan xorg-x11-drv-mga
+  xorg-x11-drv-microtouch xorg-x11-drv-mouse xorg-x11-drv-mutouch
+  xorg-x11-drv-neomagic xorg-x11-drv-nouveau xorg-x11-drv-nv
+  xorg-x11-drv-palmax xorg-x11-drv-penmount xorg-x11-drv-rendition
+  xorg-x11-drv-s3 xorg-x11-drv-s3virge xorg-x11-drv-savage
+  xorg-x11-drv-siliconmotion xorg-x11-drv-sis xorg-x11-drv-sisusb
+  xorg-x11-drv-spaceorb xorg-x11-drv-summa xorg-x11-drv-tdfx
+  xorg-x11-drv-tek4957 xorg-x11-drv-trident xorg-x11-drv-tseng
+  xorg-x11-drv-ur98 xorg-x11-drv-v4l xorg-x11-drv-vesa xorg-x11-drv-vmmouse
+  xorg-x11-drv-vmware xorg-x11-drv-void xorg-x11-drv-voodoo
+  xorg-x11-filesystem xorg-x11-font-utils xorg-x11-fonts-100dpi
+  xorg-x11-fonts-75dpi xorg-x11-fonts-ISO8859-1-100dpi
+  xorg-x11-fonts-ISO8859-1-75dpi xorg-x11-fonts-Type1 xorg-x11-fonts-misc
+  xorg-x11-server-Xorg xorg-x11-server-utils xorg-x11-twm xorg-x11-xauth
+  xorg-x11-xfs xorg-x11-xinit xorg-x11-xkb-utils xterm xvidcore youtube-dl yum
+  yum-metadata-parser zip zisofs-tools zlib
+The following packages will be REPLACED:
+  audacious-plugins-pulseaudio (by audacious-plugins)  desktop-printing (by
+  system-config-printer)  dhcdbd (by NetworkManager)  esound (by
+  pulseaudio-esound-compat)  fast-user-switch-applet (by
+  gdm-user-switch-applet)  firstboot-tui (by firstboot)  libgssapi (by
+  libgssglue)  libsmbios-libs (by smbios-utils)  mencoder (by mplayer)  mktemp
+  (by coreutils)  mpg321 (by mpg123)  mplayerplug-in (by gecko-mediaplayer) 
+  newt-perl (by perl-Newt)  perl-DateManip (by perl-Date-Manip)  pirut (by
+  gnome-packagekit)  pulseaudio-lib (by pulseaudio-libs)  redhat-artwork (by
+  fedora-gnome-theme)  scrollkeeper (by rarian-compat) 
+  system-config-securitylevel (by system-config-firewall) 
+  system-config-securitylevel-tui (by system-config-firewall-tui)  sysvinit
+  (by upstart)  totem-plparser (by totem-pl-parser)  vixie-cron (by cronie) 
+  xorg-x11-drv-amd (by xorg-x11-drv-geode)  xorg-x11-drv-magictouch (by
+  xorg-x11-server-Xorg)  xorg-x11-drv-via (by xorg-x11-drv-openchrome) 
+  xorg-x11-fonts-base (by xorg-x11-fonts-misc)
+The following packages will be REMOVED:
+  Miro audacious-plugins-extras libtermcap termcap thoggen xine-lib-moles
+The following NEW packages will be installed:
+  GraphicsMagick PackageKit PackageKit-libs PersonalCopy-Lite-patches
+  PolicyKit PolicyKit-gnome PolicyKit-gnome-libs aiksaurus aiksaurus-gtk atlas
+  avahi-compat-libdns_sd blag-package-config-apt blag-package-config-yum
+  bluecurve-icon-theme bluez-libs compat-db compat-libgfortran-41 compiz-gnome
+  control-center-filesystem cronie dbus-libs dirmngr exempi faad2-libs
+  fedora-gnome-theme fedora-icon-theme fedora-screensaver-theme
+  fedorainfinity-screensaver-theme ffmpeg-libs fluidsynth-libs gamin-python
+  gdm-user-switch-applet gecko-mediaplayer glabels-doc glabels-libs glib
+  gnome-keyring-pam gnome-mplayer gnome-packagekit gnome-panel-libs
+  gnome-settings-daemon gnupg2 goffice04 gpgme gtk+ gtk-nodoka-engine
+  gtksourceview2 gvfs httpd-tools hunspell hunspell-en iso-codes isomd5sum
+  jasper-libs kernel-libre lame-libs lash lcms-libs libXxf86dga libarchive
+  libconfig libcurl libdc1394_22 libdca0 libdirect-1.0_0 libdirectfb-1.0_0
+  libdiscid libedit libfusion-1.0_0 libgfortran libgssglue libgweather libksba
+  liblzo2_2 libmikmod libmowgli libmp3lame0 libntlm libpciaccess libquicktime0
+  libsmbios libspectre libtalloc libtasn1 libtdb libtimidity libuser-python
+  libvisual libwiimote libwmf-lite libx264_58 libxcb linux-atm-libs lirc-lib
+  loudmouth mdadm mousetweaks mozilla-filesystem mpfr mpg123 nas-libs
+  newt-python nodoka-metacity-theme nodoka-theme-gnome ntfsprogs numpy
+  obex-data-server openobex pakchois paps-libs perl-Compress-Raw-Zlib
+  perl-Convert-ASN1 perl-Date-Manip perl-IO-Compress-Base
+  perl-IO-Compress-Zlib perl-Module-Pluggable perl-Newt perl-Pod-Escapes
+  perl-Pod-Simple perl-version pinentry pixman poppler-glib portaudio pth
+  pulseaudio pulseaudio-core-libs pulseaudio-esound-compat pulseaudio-libs
+  pygpgme pygtksourceview python-iniparse python-lxml python-tunepimp qt3
+  rarian rarian-compat samba-winbind smbios-utils svgalib
+  system-config-firewall system-config-firewall-tui sysvinit-tools
+  totem-pl-parser upstart ustr wildmidi-libs wv xdg-utils xmms-libs
+  xorg-x11-drv-diamondtouch xorg-x11-drv-geode xorg-x11-drv-openchrome
+  xorg-x11-drv-wiimote xorg-x11-server-common xulrunner yum-packagekit zenity
+The following packages have been kept back
+  aalib boost firefox fuse libicu ncurses ncurses-devel
+745 upgraded, 158 newly installed, 27 replaced, 6 removed and 7 not upgraded.
+Need to get 755MB of archives.
+After unpacking 353MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://www.blagblagblag.org 90000/i386/fedora glibc-common 2.8-3 [22.4MB]
+(*snip*)
+99% [902 youtube-dl 277/11.0kB 2%]                                   221kB/s 0s99% [Working]                                                        221kB/s 0s                                                                               Get:903 http://www.blagblagblag.org 90000/i386/fedora zisofs-tools 1.0.8-3.fc9 [24.2kB]
+99% [903 zisofs-tools 1061/24.2kB 4%]                                221kB/s 0s100% [Working]                                                       221kB/s 0s                                                                               Fetched 755MB in 57m7s (220kB/s)
+Committing changes...
+Preparing...                                                            100%]
+	file /usr/lib/libx264.so.58 conflicts between attempted installs of x264-0.0.0-0.12.20080227.lvn9 and libx264_58-svn20080225_2245-5.fc9
+	file /usr/lib/libmp3lame.so.0.0.0 conflicts between attempted installs of lame-libs-3.97-6.lvn8 and libmp3lame0-3.97-16.fc9
+	file /etc/gre.d/gre.conf from install of xulrunner-1.9-0.60.beta5.fc9 conflicts with file from package firefox-2.0.0.8-2blag.f7
+	file /usr/sbin/vipw from install of shadow-utils-4.1.1-1.fc9 conflicts with file from package util-linux-2.13-0.54.1.fc7
+	file /usr/share/man/man8/vipw.8.gz from install of shadow-utils-4.1.1-1.fc9 conflicts with file from package util-linux-2.13-0.54.1.fc7
+E: Error while running transaction
